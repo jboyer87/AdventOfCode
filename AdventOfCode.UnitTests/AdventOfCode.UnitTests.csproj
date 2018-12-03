@@ -14,4 +14,8 @@
 	<ItemGroup>
 		<ProjectReference Include="..\AdventOfCode.Problems\AdventOfCode.Problems.csproj" />
 	</ItemGroup>
+
+	<PropertyGroup>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
 </Project>

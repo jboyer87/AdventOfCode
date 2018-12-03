@@ -1,10 +1,10 @@
 using System;
-using AdventOfCode.Problems;
+using AdventOfCode.Problems.Year2018;
 using Xunit;
 
 namespace AdventOfCode.UnitTests
 {
-	public class ProblemTests
+	public class Year2018Tests
 	{
 		[Fact]
 		public void Stub()

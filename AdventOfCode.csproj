@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
 	<ItemGroup>
 		<ProjectReference Include="AdventOfCode.Problems\AdventOfCode.Problems.csproj" />
 		<ProjectReference Include="AdventOfCode.UnitTests\AdventOfCode.UnitTests.csproj" />

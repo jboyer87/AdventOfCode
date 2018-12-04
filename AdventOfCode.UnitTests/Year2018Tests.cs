@@ -20,7 +20,7 @@ namespace AdventOfCode.UnitTests
 			Assert.Equal(shouldBe, result);
 
 			string[] frequencyChanges2 = new string[] { "+3", "+3", "+4", "-2", "-4" };
-
+			
 			int shouldBe2 = 10;
 
 			int result2 = Problem01.GetFirstRepeatingFrequency(startingFrequency, frequencyChanges2);

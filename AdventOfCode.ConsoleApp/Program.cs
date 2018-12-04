@@ -21,9 +21,14 @@ namespace AdventOfCode.ConsoleApp
 
 			problem01Input = File.ReadAllLines(inputFile);
 
-			int result = Problem01.CalculateResultingFrequency(0, problem01Input);
+			int resultPartOne = Problem01.CalculateResultingFrequency(0, problem01Input);
 
-			Console.WriteLine("Problem 01 Part 01 result is: {0}", result);
+			Console.WriteLine("Problem 01 Part 01 result is: {0}", resultPartOne);
+
+			int resultPartTwo = Problem01.GetFirstRepeatingFrequency(0, problem01Input);
+
+			Console.WriteLine("Problem 01 Part 02 result is: {0}", resultPartTwo);
+		
 		}
 	}
 }

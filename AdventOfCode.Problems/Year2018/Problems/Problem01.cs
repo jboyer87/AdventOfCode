@@ -27,25 +27,27 @@ namespace AdventOfCode.Problems.Year2018
 			HashSet<int> seen = new HashSet<int>();
 
 			int runningTotal = startingFrequency;
+			bool isRepeat = false;
 
-			foreach (var frequency in frequencyChanges)
+			while(!isRepeat)
 			{
-				int current = int.Parse(frequency);
-
-				runningTotal += current;
-
-				int previousSize = seen.Count;
-
-				seen.Add(runningTotal);
-
-				// If the size of the hashset has not increased, it was a dupe
-				if (previousSize == seen.Count)
+				foreach (var frequency in frequencyChanges)
 				{
-					return runningTotal;
+					int current = int.Parse(frequency);
+
+					runningTotal += current;
+
+					// If the size of the hashset has not increased, it was a dupe
+					if (seen.Contains(runningTotal))
+					{
+						isRepeat = true;
+						return runningTotal;
+					}
+
+					seen.Add(runningTotal);
 				}
 			}
 
-			// return 0 if nothing repeated
 			return 0;
 		}
 	}

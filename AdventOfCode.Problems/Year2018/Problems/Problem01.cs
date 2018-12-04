@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace AdventOfCode.Problems.Year2018
 {
 	public class Problem01
@@ -18,6 +20,33 @@ namespace AdventOfCode.Problems.Year2018
 			}
 
 			return startingFrequency;
+		}
+
+		public static int GetFirstRepeatingFrequency(int startingFrequency, string[] frequencyChanges)
+		{
+			HashSet<int> seen = new HashSet<int>();
+
+			int runningTotal = startingFrequency;
+
+			foreach (var frequency in frequencyChanges)
+			{
+				int current = int.Parse(frequency);
+
+				runningTotal += current;
+
+				int previousSize = seen.Count;
+
+				seen.Add(runningTotal);
+
+				// If the size of the hashset has not increased, it was a dupe
+				if (previousSize == seen.Count)
+				{
+					return runningTotal;
+				}
+			}
+
+			// return 0 if nothing repeated
+			return 0;
 		}
 	}
 }

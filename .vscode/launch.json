@@ -9,7 +9,7 @@
 			"type": "coreclr",
 			"request": "launch",
 			"preLaunchTask": "build",
-			"program": "${workspaceFolder}/bin/Debug/netcoreapp2.1/AdventOfCode.dll",
+			"program": "${workspaceFolder}/AdventOfCode.ConsoleApp/bin/Debug/netcoreapp2.1/AdventOfCode.ConsoleApp.dll",
 			"args": [],
 			"cwd": "${workspaceFolder}",
 			"console": "internalConsole",

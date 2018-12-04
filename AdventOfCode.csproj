@@ -1,12 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
+	
 	<ItemGroup>
+		<ProjectReference Include="AdventOfCode.ConsoleApp\AdventOfCode.ConsoleApp.csproj" />
 		<ProjectReference Include="AdventOfCode.Problems\AdventOfCode.Problems.csproj" />
 		<ProjectReference Include="AdventOfCode.UnitTests\AdventOfCode.UnitTests.csproj" />
 	</ItemGroup>
 
+
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 		<TargetFramework>netcoreapp2.1</TargetFramework>
+		<StartupObject>AdventOfCode.ConsoleApp.Program</StartupObject>
 	</PropertyGroup>
 
 </Project>

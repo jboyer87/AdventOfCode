@@ -63,5 +63,18 @@ namespace AdventOfCode.UnitTests
 
 			Assert.Equal(part2ShouldBe, part2Result);
 		}
+
+		[Fact]
+		public void Problem05Should()
+		{
+			string polymer = "dabAcCaCBAcCcaDA";
+
+			int part1ShouldBe = 10;
+
+			int part1Result = Problem05.RemoveAdjacentLetters(polymer);
+
+			Assert.Equal(part1ShouldBe, part1Result);
+
+		}
 	}
 }

@@ -7,25 +7,46 @@ namespace AdventOfCode.UnitTests
 	public class Year2018Tests
 	{
 		[Fact]
-		public void Problem01Test()
+		public void Problem01Should()
 		{
 			int startingFrequency = 0;
 
 			string[] frequencyChanges = new string[] { "0", "+1", "-2", "+3", "+1" };
 
-			int shouldBe = 3;
+			int part3ShouldBe = 3;
 
-			int result = Problem01.CalculateResultingFrequency(startingFrequency, frequencyChanges);
+			int part1Result = Problem01.CalculateResultingFrequency(startingFrequency, frequencyChanges);
 
-			Assert.Equal(shouldBe, result);
+			Assert.Equal(part3ShouldBe, part1Result);
 
 			string[] frequencyChanges2 = new string[] { "+3", "+3", "+4", "-2", "-4" };
-			
-			int shouldBe2 = 10;
 
-			int result2 = Problem01.GetFirstRepeatingFrequency(startingFrequency, frequencyChanges2);
+			int part2ShouldBe = 10;
 
-			Assert.Equal(shouldBe2, result2);
+			int part2Result = Problem01.GetFirstRepeatingFrequency(startingFrequency, frequencyChanges2);
+
+			Assert.Equal(part2ShouldBe, part2Result);
+		}
+
+		[Fact]
+		public void Problem02Should()
+		{
+			string[] boxIds = new string[] {
+				"abcdef",
+				"bababc",
+				"abbcde",
+				"abcccd",
+				"aabcdd",
+				"abcdee",
+				"ababab"
+			};
+
+			int part1ShouldBe = 12;
+
+			int part1Result = Problem02.ComputeChecksum(boxIds);
+
+			Assert.Equal(part1ShouldBe, part1Result);
+
 		}
 	}
 }

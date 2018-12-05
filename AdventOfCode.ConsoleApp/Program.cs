@@ -6,29 +6,47 @@ namespace AdventOfCode.ConsoleApp
 {
 	class Program
 	{
-		#region [ Fields ]
+		#region [Fields]
 
 		private static readonly string _inputFileDirectory = "AdventOfCode.Problems\\Year2018\\ProblemInput\\";
 
 		#endregion
+
+		#region [Methods]
+
 		static void Main(string[] args)
 		{
 			// Problem01
 
-			string[] problem01Input;
+			// get input from file
+			string[] problem01Input = GetArrayFromInputFile("Problem01");
 
-			var inputFile = Path.Combine(_inputFileDirectory, "Problem01", "input.txt");
+			int resultProblem1Part1 = Problem01.CalculateResultingFrequency(0, problem01Input);
+			Console.WriteLine("Problem 01 Part 01 result is: {0}", resultProblem1Part1);
 
-			problem01Input = File.ReadAllLines(inputFile);
+			int resultProblem1Part2 = Problem01.GetFirstRepeatingFrequency(0, problem01Input);
+			Console.WriteLine("Problem 01 Part 02 result is: {0}", resultProblem1Part2);
 
-			int resultPartOne = Problem01.CalculateResultingFrequency(0, problem01Input);
+			// Problem02
 
-			Console.WriteLine("Problem 01 Part 01 result is: {0}", resultPartOne);
+			// get input from file
+			string[] problem02Input = GetArrayFromInputFile("Problem02");
 
-			int resultPartTwo = Problem01.GetFirstRepeatingFrequency(0, problem01Input);
+			int resultProblem2Part1 = Problem02.ComputeChecksum(problem02Input);
 
-			Console.WriteLine("Problem 01 Part 02 result is: {0}", resultPartTwo);
-		
+			Console.WriteLine("Problem 02 Part 01 result is: {0}", resultProblem2Part1);
 		}
+
+		#endregion
+
+		#region [Private Methods]
+		private static string[] GetArrayFromInputFile(string problemName)
+		{
+			var inputFile = Path.Combine(_inputFileDirectory, problemName, "input.txt");
+
+			return File.ReadAllLines(inputFile);
+		}
+
+		#endregion
 	}
 }

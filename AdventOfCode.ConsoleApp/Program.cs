@@ -35,6 +35,10 @@ namespace AdventOfCode.ConsoleApp
 			int resultProblem2Part1 = Problem02.ComputeChecksum(problem02Input);
 
 			Console.WriteLine("Problem 02 Part 01 result is: {0}", resultProblem2Part1);
+
+			string resultProblem2Part2 = Problem02.GetOffByOneStringPair(problem02Input, true);
+
+			Console.WriteLine("Problem 02 Part 02 result is: {0}", resultProblem2Part2);
 		}
 
 		#endregion

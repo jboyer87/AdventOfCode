@@ -47,6 +47,21 @@ namespace AdventOfCode.UnitTests
 
 			Assert.Equal(part1ShouldBe, part1Result);
 
+			string[] boxIds2 = new string[] {
+				"abcde",
+				"fghij",
+				"klmno",
+				"pqrst",
+				"fguij",
+				"axcye",
+				"wvxyz"
+			};
+
+			string part2ShouldBe = "fgij";
+
+			string part2Result = Problem02.GetOffByOneStringPair(boxIds2, true);
+
+			Assert.Equal(part2ShouldBe, part2Result);
 		}
 	}
 }

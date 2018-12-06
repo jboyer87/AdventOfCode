@@ -38,5 +38,49 @@ namespace AdventOfCode.Problems.Year2018
 
 			return result.Length;
 		}
+
+
+		// Part 2 asks us to see what removing all instances of a letter (both upper and 
+		// lower) does. If we remove all a, A, does the resulting string length shrink? Do
+		// this for each letter in the alphabet, and return the length of the smallest 
+		// resulting string.
+		public static int GetSmallestSubstringLength(string input)
+		{
+			if (input.Length == 0)
+				return 0;
+
+			// point where "a" appears in ascii character set
+			int asciiOffset = 97;
+			int maxAsciiCharacter = 122;
+
+			int smallestResult = input.Length;
+
+			// Try with each character set, store the result in an array
+			for (int i = asciiOffset; i <= maxAsciiCharacter; i++)
+			{
+				char lowercaseCurrent = (char)i;
+				char uppercaseCurrent = (char)(lowercaseCurrent - 32);
+
+				StringBuilder result = new StringBuilder(input);
+
+				for (int j = 0; j < result.Length; j++)
+				{
+					if (result[j] == lowercaseCurrent || result[j] == uppercaseCurrent)
+					{
+						result.Remove(j, 1);
+						// Go back one and check, just in case there are adjacent removals
+						j--;
+					}
+				}
+
+				int newLength = RemoveAdjacentLetters(result.ToString());
+
+				smallestResult = newLength < smallestResult
+					? newLength
+					: smallestResult;
+			}
+
+			return smallestResult;
+		}
 	}
 }

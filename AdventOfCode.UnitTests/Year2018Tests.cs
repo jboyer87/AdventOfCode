@@ -75,6 +75,11 @@ namespace AdventOfCode.UnitTests
 
 			Assert.Equal(part1ShouldBe, part1Result);
 
+			int part2ShouldBe = 4;
+
+			int part2Result = Problem05.GetSmallestSubstringLength(polymer);
+
+			Assert.Equal(part2ShouldBe, part2Result);
 		}
 	}
 }
